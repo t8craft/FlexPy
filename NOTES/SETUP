@@ -1,0 +1,107 @@
+
+
+1. Set Up a Virtual Environment:
+
+In the root of your project, run: >>>>>>> python -m venv venv
+
+activate the environment >>>>>> venv\Scripts\activate
+
+2. Install Required Packages:
+
+Decide on packages for essential functionalities. For example:
+>>>>>> pip install sqlalchemy alembic
+
+Store dependencies by running:
+>>>>> pip freeze > requirements.txt
+
+
+3. Set Up Your src Folder:
+
+Create a main entry file in src (e.g., main.py) to run or test your code.
+For example, you might import and run something from Logic or initialize the database.
+
+
+4. Configure Alembic for Migrations:
+
+In the root directory, initialize Alembic:
+bash # alembic init alembic
+
+5. Create a .env File (Optional):
+   Store sensitive information like database URLs in .env and load them in main.py with dotenv.
+
+
+6. ????? is it possible to automatically update the file each time a package is successfully installed   
+
+  >>>> Yes but there is need to create a custom script to do this.
+
+7. Create a migration.py which automatically checks all the entity files and create 
+   a database table for the entities that do not have a table.   /src/migrations.py
+   
+
+8. Create a db.py file ( src/db.py) that will initiate the connection to the database as 
+   defined in the .env file.
+
+   For the db.py file to be able to get details from the .env file you should install
+
+   * pip install dotenv >>>>> pip install python-dotenv
+
+   * followed by >>>>> pip show python-dotenv
+
+    
+   Restart the the project ( Close / ) 
+
+
+9.  Set up the db_test.py (src/db_test.py) , also ensure that  >>> pip install psycopg2 , is installed
+     then run >>>> python src/db_test.py
+     result should be "Database connection successful!" 
+
+
+10. Now that you have the 
+         .env folder
+         Logic Files for , user  ( You need to add the data required for the _init_py files also)
+         Entity Files for , user ( You need to add the data required for the _init_py files also)
+         db.py file 
+         migration.py 
+
+         1. __init__.py should be in each of the 3 main folders (LET)
+         Initialize the Project as a Python Package:
+
+         Create an __init__.py file in each folder (Logic, Entities, Tables, and src). 
+         This file can be empty or contain package metadata.
+
+
+12. #### Run the migration.py (src/,igration.py) file
+
+
+There was an issue running the migratio.py file which is in src folder, the issue had to 
+     to do with the fact that the migration.py file was failing to import "from Entities import *"  so 
+     I added the lines below to the top of the migration.py file.
+
+
+      *****************************************************************
+      import sys
+      import os
+
+      # Add the project root directory (Base_Two) to the Python path
+      sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+      *****************************************************************
+
+13.   Database Connection Test --- > >>>> python src/db_test.py
+      To test the database connection
+
+
+14.   Always update the list of installed packages
+      >>>>>>   pip freeze > requirements.txt
+      
+           
+
+      
+
+
+14. The above should be a standard template to begin a FlexPy Project.
+
+
+
+THEMES
+Atom One Dark
+Azure Lane
