@@ -9,7 +9,16 @@ activate the environment >>>>>> venv\Scripts\activate
 2. Install Required Packages:
 
 Decide on packages for essential functionalities. For example:
->>>>>> pip install sqlalchemy alembic
+
+
+       1.pip install beautifulsoup4
+       2.pip install openai
+       3.pip install requests
+       4.pip install sqlalchemy alembic
+
+       ALL AT ONCE >>>>> pip install beautifulsoup4 openai requests
+
+       When you want to see if something is instaled ###### python -m pip show requests  
 
 Store dependencies by running:
 >>>>> pip freeze > requirements.txt
