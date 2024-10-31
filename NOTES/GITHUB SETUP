@@ -1,19 +1,24 @@
 SETTING UP A NEW GITHUB REPO FOR A NEW PROJECT
 
-
-1. Open the terminal in VS Code, that is the folder of your projrct. 
-   and run  >>>> git init
-
-2. >> git add .
-
-3. git commit -m "Initial commit"
-
-4. Create a Repository on GitHub , Use GitHub’s CLI (Git Hub CMD): >>>> gh repo create <repo-name>
-
-5. Return to your project terminal and >>>>> git remote add origin https://github.com/<username>/<repo-name>.git
+      1. CREATE A NEW REPO IN GITHUB WEB
 
 
-6. While in the project terminal >>>> git push -u origin main
+      2. STEPS TO FOLLOW AFTER YOU HAVE CREATED THE NEW REPO IN GITHUB WEB.
+
+            PT = Project Terminal
+
+            PT: echo "# FlexPy" >> README.md
+            PT: git init
+            PT: git add README.md
+            PT: git commit -m "first commit"
+            PT: git branch -M main
+            GITHUB WEB ACCOUNT : Go To github web account and add new repo
+            PT: git remote add origin https://github.com/t8craft/FlexPy.git
+            PT: git push -u origin main
+
+
+
+
 
 
 
